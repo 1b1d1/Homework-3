@@ -4,7 +4,6 @@ var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVVWXYZ";
 var number = "0123456789";
 var special = "!@#$%^&*()_+-=?><";
-console.log(lower)
  
 
 function getPassOptions() {
@@ -29,7 +28,7 @@ function getPassOptions() {
   var specialSet = confirm("Do you want special characters in your password? (Confim = Yes, Cancel = No)");
   
   var passwordOptions = {
-    length:length,
+    length: Number(length),
     hasLower: lowerSet,
     hasUpper: upperSet ,
     hasNumber: numberSet,
@@ -43,6 +42,7 @@ function getPassOptions() {
 
  function generatePassword() {
    var options = getPassOptions();
+   console.log(options);
    var result = ''; // where we save the password to
    var possibleChoices = '';
    //
@@ -62,33 +62,36 @@ function getPassOptions() {
 
  }
 
- if(options.hasNumber === true) {
+  if(options.hasNumber === true) {
       
   possibleChoices = possibleChoices.concat(number)
   guaranteedCharacters = guaranteedCharacters.concat(getRandomChar(number))
 
 }
-if(options.hasSpecial === true) {
+  if(options.hasSpecial === true) {
       
   possibleChoices = possibleChoices.concat(special)
   guaranteedCharacters = guaranteedCharacters.concat(getRandomChar(special))
 
 }
    console.log(possibleChoices)
-   
-  for (var i = 0, n = options.length; i < length; ++i) {
-     result = result.concat( getRandomChar(possibleChoices))
+   console.log(options.length)
+  for (var i = 0; i < options.length; i++) {
+     result += possibleChoices.charAt(Math.floor(Math.random() * possibleChoices.length))
+    console.log(possibleChoices)
+  console.log(i)
+ 
   
-  console.log('result: ', result)
-  return result
   }
+  return result
+    console.log('result: ', result)
  }
 
  function getRandomChar(str) {
     var randomIndex = Math.floor(Math.random() * str.length);
     return str[randomIndex]
- }
- console.log(generatePassword)
+ } 
+ console.log('generate' , generatePassword)
 
 
 function writePassword() {
