@@ -14,4 +14,5 @@ length, you can then decide what kind of characters you want to have in the pass
 This generator is made to make sure at least 1 of every option you select will be included
 in the password generated. 
 
-**Screeenshots:**
+**Screeenshot:**
+![](Genscreen.jpg)
