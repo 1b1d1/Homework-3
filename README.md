@@ -22,6 +22,6 @@ in the password generated.
 https://github.com/1b1d1/Homework-3
 
 
-**Link to the deployed website:
+**Link to the deployed website:**
 
 https://1b1d1.github.io/Homework-3/
