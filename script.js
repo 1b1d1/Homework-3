@@ -34,18 +34,13 @@ function getPassOptions() {
     hasNumber: numberSet,
     hasSpecial: specialSet
   }
-  console.log(passwordOptions)
-
-
-   return passwordOptions;
+    return passwordOptions;
  }
 
  function generatePassword() {
    var options = getPassOptions();
-   console.log(options);
-   var result = ''; // where we save the password to
+   var result = ''; 
    var possibleChoices = '';
-   //
    var guaranteedCharacters = '';
 
    if(options.hasLower === true) {
@@ -74,24 +69,20 @@ function getPassOptions() {
   guaranteedCharacters = guaranteedCharacters.concat(getRandomChar(special))
 
 }
-   console.log(possibleChoices)
-   console.log(options.length)
   for (var i = 0; i < options.length; i++) {
      result += possibleChoices.charAt(Math.floor(Math.random() * possibleChoices.length))
-    console.log(possibleChoices)
-  console.log(i)
+    
  
   
   }
   return result
-    console.log('result: ', result)
+
  }
 
  function getRandomChar(str) {
     var randomIndex = Math.floor(Math.random() * str.length);
     return str[randomIndex]
  } 
- console.log('generate' , generatePassword)
 
 
 function writePassword() {
