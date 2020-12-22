@@ -54,19 +54,41 @@ function getPassOptions() {
       guaranteedCharacters = guaranteedCharacters.concat(getRandomChar(lower))
 
    }
+
+   if(options.hasUpper === true) {
+      
+    possibleChoices = possibleChoices.concat(upper)
+    guaranteedCharacters = guaranteedCharacters.concat(getRandomChar(upper))
+
+ }
+
+ if(options.hasNumber === true) {
+      
+  possibleChoices = possibleChoices.concat(number)
+  guaranteedCharacters = guaranteedCharacters.concat(getRandomChar(number))
+
+}
+if(options.hasSpecial === true) {
+      
+  possibleChoices = possibleChoices.concat(special)
+  guaranteedCharacters = guaranteedCharacters.concat(getRandomChar(special))
+
+}
    console.log(possibleChoices)
+   
   for (var i = 0, n = options.length; i < length; ++i) {
-    // google how to add a  charcter to the end of a string
      result = result.concat( getRandomChar(possibleChoices))
-  }
+  
   console.log('result: ', result)
   return result
+  }
  }
 
  function getRandomChar(str) {
     var randomIndex = Math.floor(Math.random() * str.length);
     return str[randomIndex]
  }
+ console.log(generatePassword)
 
 
 function writePassword() {
