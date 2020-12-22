@@ -10,7 +10,7 @@ function getPassOptions() {
   var length = prompt("How many characters do you want in your password? (8-128)");
 
   if(isNaN(length) === true) {
-    alert('pass length should be a number')
+    alert("Please only use number keys for your password length.")
     return;
   }
   if(length < 8) {
@@ -22,10 +22,10 @@ function getPassOptions() {
     alert('length must be smaller than 128')
   }
 
-  var lowerSet = confirm("Do you want lowercase characters in your password? (Confirm = yes, Cancel = no)");
-  var upperSet = confirm("Do you want uppercase characters in your password? (Confirm = yes, Cancel = no)");
+  var lowerSet = confirm("Do you want lowercase characters in your password? (OK = yes, Cancel = no)");
+  var upperSet = confirm("Do you want uppercase characters in your password? (OK = yes, Cancel = no)");
   var numberSet = confirm ("Do you want numbers in your password (Ok = yes, Cancel = No)");
-  var specialSet = confirm("Do you want special characters in your password? (Confim = Yes, Cancel = No)");
+  var specialSet = confirm("Do you want special characters in your password? (OK = Yes, Cancel = No)");
   
   var passwordOptions = {
     length: Number(length),
